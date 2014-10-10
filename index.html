@@ -1,18 +1,20 @@
-<!doctype html>
+---
+layout: default
+---
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+<div class="home">
 
-  <title>aitch tee tee pee cee o el o en ess el a ess aitch ess el a ess aitch double-u double-u double-u</title>
-  <meta name="description" content="aitch tee tee pee cee o el o en ess el a ess aitch ess el a ess aitch double-u double-u double-u">
-  <meta name="author" content="Danny Dorsey">
+  <h1>Posts</h1>
 
-</head>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 
-<body>
-  <p>
-	aitch tee tee pee cee o el o en ess el a ess aitch ess el a ess aitch double-u double-u double-u
-  </p>
-</body>
-</html>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
